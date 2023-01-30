@@ -78,30 +78,30 @@ def stats(update, context):
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
     if config_dict['EMOJI_THEME']:
-            stats = f'<b>╭─《🌐 BOT STATISTICS 🌐》</b>\n' \
-                    f'<b>├ 🛠 Updated On: </b>{last_commit}\n'\
-                    f'<b>├ ⌛ Uptime: </b>{currentTime}\n'\
-                    f'<b>├ 🤖 Version: </b>{version}\n'\
-                    f'<b>├ 🟢 OS Uptime: </b>{osUptime}\n'\
-                    f'<b>├ 🖥️ CPU:</b> [{progress_bar(cpuUsage)}] {cpuUsage}%\n'\
-                    f'<b>├ 🎮 RAM:</b> [{progress_bar(mem_p)}] {mem_p}%\n'\
-                    f'<b>├ 💾 Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
-                    f'<b>├ 💿 Disk Free:</b> {free}\n'\
-                    f'<b>├ 🔺 Upload Data:</b> {sent}\n'\
-                    f'<b>╰ 🔻 Download Data:</b> {recv}\n\n'
+            stats = f'<b>┏━《🌐 BOT STATISTICS 🌐》</b>\n' \
+                    f'<b>┣ 🛠 Updated On: </b>{last_commit}\n'\
+                    f'<b>┣ ⌛ Uptime: </b>{currentTime}\n'\
+                    f'<b>┣ 🤖 Version: </b>{version}\n'\
+                    f'<b>┣ 🟢 OS Uptime: </b>{osUptime}\n'\
+                    f'<b>┣ 🖥️ CPU:</b> [{progress_bar(cpuUsage)}] {cpuUsage}%\n'\
+                    f'<b>┣ 🎮 RAM:</b> [{progress_bar(mem_p)}] {mem_p}%\n'\
+                    f'<b>┣ 💾 Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
+                    f'<b>┣ 💿 Disk Free:</b> {free}\n'\
+                    f'<b>┣ 🔺 Upload Data:</b> {sent}\n'\
+                    f'<b>┗ 🔻 Download Data:</b> {recv}\n\n'
 
     else:
-            stats = f'<b>╭─《🌐 BOT STATISTICS 🌐》</b>\n' \
-                    f'<b>├  Updated On: </b>{last_commit}\n'\
-                    f'<b>├  Uptime: </b>{currentTime}\n'\
-                    f'<b>├  Version: </b>{version}\n'\
-                    f'<b>├  OS Uptime: </b>{osUptime}\n'\
-                    f'<b>├  CPU:</b> [{progress_bar(cpuUsage)}] {cpuUsage}%\n'\
-                    f'<b>├  RAM:</b> [{progress_bar(mem_p)}] {mem_p}%\n'\
-                    f'<b>├  Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
-                    f'<b>├  Disk Free:</b> {free}\n'\
-                    f'<b>├  Upload Data:</b> {sent}\n'\
-                    f'<b>╰  Download Data:</b> {recv}\n\n'
+            stats = f'<b>┏━《🌐 BOT STATISTICS 🌐》</b>\n' \
+                    f'<b>┣  Updated On: </b>{last_commit}\n'\
+                    f'<b>┣  Uptime: </b>{currentTime}\n'\
+                    f'<b>┣  Version: </b>{version}\n'\
+                    f'<b>┣  OS Uptime: </b>{osUptime}\n'\
+                    f'<b>┣  CPU:</b> [{progress_bar(cpuUsage)}] {cpuUsage}%\n'\
+                    f'<b>┣  RAM:</b> [{progress_bar(mem_p)}] {mem_p}%\n'\
+                    f'<b>┣  Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
+                    f'<b>┣  Disk Free:</b> {free}\n'\
+                    f'<b>┣  Upload Data:</b> {sent}\n'\
+                    f'<b>┗  Download Data:</b> {recv}\n\n'
 
 
 
@@ -124,23 +124,23 @@ def stats(update, context):
         user_task = 'No Limit Set' if USER_TASKS_LIMIT == '' else f'{USER_TASKS_LIMIT} Tasks/user'
 
         if config_dict['EMOJI_THEME']: 
-            stats += f'<b>╭─《 ⚠️ BOT LIMITS ⚠️ 》</b>\n'\
-                     f'<b>├ 🧲 Torrent/Direct: </b>{torrent_direct}\n'\
-                     f'<b>├ 🔐 Zip/Unzip: </b>{zip_unzip}\n'\
-                     f'<b>├ 🔷 Leech: </b>{leech_limit}\n'\
-                     f'<b>├ ♻️ Clone: </b>{clone_limit}\n'\
-                     f'<b>├ 🔰 Mega: </b>{mega_limit}\n'\
-                     f'<b>├ 💣 Total Tasks: </b>{total_task}\n'\
-                     f'<b>╰ 🔫 User Tasks: </b>{user_task}\n\n'
+            stats += f'<b>┏━━《 ⚠️ BOT LIMITS ⚠️ 》</b>\n'\
+                     f'<b>┣ 🧲 Torrent/Direct: </b>{torrent_direct}\n'\
+                     f'<b>┣ 🔐 Zip/Unzip: </b>{zip_unzip}\n'\
+                     f'<b>┣ 🔷 Leech: </b>{leech_limit}\n'\
+                     f'<b>┣ ♻️ Clone: </b>{clone_limit}\n'\
+                     f'<b>┣ 🔰 Mega: </b>{mega_limit}\n'\
+                     f'<b>┣ 💣 Total Tasks: </b>{total_task}\n'\
+                     f'<b>┗ 🔫 User Tasks: </b>{user_task}\n\n'
         else: 
-            stats += f'<b>╭─《 ⚠️ BOT LIMITS ⚠️ 》</b>\n'\
-                     f'<b>├  Torrent/Direct: </b>{torrent_direct}\n'\
-                     f'<b>├  Zip/Unzip: </b>{zip_unzip}\n'\
-                     f'<b>├  Leech: </b>{leech_limit}\n'\
-                     f'<b>├  Clone: </b>{clone_limit}\n'\
-                     f'<b>├  Mega: </b>{mega_limit}\n'\
-                     f'<b>├  Total Tasks: </b>{total_task}\n'\
-                     f'<b>╰  User Tasks: </b>{user_task}\n\n'
+            stats += f'<b>┏━《 ⚠️ BOT LIMITS ⚠️ 》</b>\n'\
+                     f'<b>┣  Torrent/Direct: </b>{torrent_direct}\n'\
+                     f'<b>┣  Zip/Unzip: </b>{zip_unzip}\n'\
+                     f'<b>┣  Leech: </b>{leech_limit}\n'\
+                     f'<b>┣  Clone: </b>{clone_limit}\n'\
+                     f'<b>┣  Mega: </b>{mega_limit}\n'\
+                     f'<b>┣  Total Tasks: </b>{total_task}\n'\
+                     f'<b>┗━ User Tasks: </b>{user_task}\n\n'
 
     if config_dict['PICS']:
         sendPhoto(stats, context.bot, update.message, rchoice(config_dict['PICS']))
@@ -157,15 +157,17 @@ def start(update, context):
         buttons.buildbutton(f"{config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        start_string = f'''This bot can mirror all your links to Google Drive!
-Type /{BotCommands.HelpCommand} to get a list of available commands
+        start_string = f'''ᴛʜɪs ʙᴏᴛ ᴄᴀɴ ᴍɪʀʀᴏʀ ᴀʟʟ ʏᴏᴜʀ ʟɪɴᴋs ᴛᴏ ɢᴏᴏɢʟᴇ ᴅʀɪᴠᴇ!
+ᴛʏᴘᴇ /{BotCommands.HelpCommand} ᴛᴏ ɢᴇᴛ ᴀ ʟɪsᴛ ᴏғ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs
 '''
         if config_dict['PICS']:
             sendPhoto(start_string, context.bot, update.message, rchoice(config_dict['PICS']), reply_markup)
         else:
             sendMessage(start_string, context.bot, update.message, reply_markup)
     else:
-        text = f"Not Authorized user, deploy your own mirror bot"
+        text = f'''ᴛʜɪs ʙᴏᴛ ᴄᴀɴ ᴍɪʀʀᴏʀ ᴀʟʟ ʏᴏᴜʀ ʟɪɴᴋs ᴛᴏ ɢᴏᴏɢʟᴇ ᴅʀɪᴠᴇ!
+ᴛʏᴘᴇ /{BotCommands.HelpCommand} ᴛᴏ ɢᴇᴛ ᴀ ʟɪsᴛ ᴏғ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs
+'''
         if config_dict['PICS']:
             sendPhoto(text, context.bot, update.message, rchoice(config_dict['PICS']), reply_markup)
         else:
@@ -207,8 +209,8 @@ def log(update, context):
 
 
 help_string = '''
-<b><a href='https://github.com/weebzone/WZML'>WeebZone</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
-Choose a help category:
+<b><a href='https://t.me/KR_Botz'>𝗞𝗥 𝗟ᴇᴇᴄʜ 𝗕ᴏᴛ</a></b> - ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴍɪʀʀᴏʀ-ʟᴇᴇᴄʜ ʙᴏᴛ ᴛᴏ ᴜᴘʟᴏᴀᴅ ʏᴏᴜʀ ғɪʟᴇ & ʟɪɴᴋ ɪɴ ɢᴏᴏɢʟᴇ ᴅʀɪᴠᴇ & ᴛᴇʟᴇɢʀᴀᴍ \n
+ᴄʜᴏᴏsᴇ ᴀ ʜᴇʟᴘ ᴄᴀᴛᴇɢᴏʀʏ :
 '''
 
 help_string_telegraph_user = f'''
