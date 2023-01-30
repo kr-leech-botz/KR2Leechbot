@@ -384,11 +384,11 @@ class GoogleDriveHelper:
                     return "your clone has been stopped and cloned data has been deleted!", "cancelled"
                 _, f_name, _ = change_filename(meta.get("name"), self.user_id, all_edit=False, mirror_type=True)
                 if config_dict['EMOJI_THEME']:
-                    msg += f'<b>╭🗂️ Name: </b><code>{f_name}</code>'
-                    msg += f'\n<b>├📦 Size: </b>{get_readable_file_size(self.transferred_size)}'
-                    msg += f'\n<b>├♻ Type: </b>Folder'
-                    msg += f'\n<b>├🗃️ SubFolders: </b>{self.__total_folders}'
-                    msg += f'\n<b>├🗂️ Files: </b>{self.__total_files}'
+                    msg += f'<b>┏ 🗂️ Name: </b><code>{f_name}</code>'
+                    msg += f'\n<b>┣📦 Size: </b>{get_readable_file_size(self.transferred_size)}'
+                    msg += f'\n<b>┣♻ Type: </b>Folder'
+                    msg += f'\n<b>┣🗃️ SubFolders: </b>{self.__total_folders}'
+                    msg += f'\n<b>┣🗂️ Files: </b>{self.__total_files}'
                 else:
                     msg += f'<b>╭ Name: </b><code>{f_name}</code>'
                     msg += f'\n<b>├ Size: </b>{get_readable_file_size(self.transferred_size)}'
@@ -406,7 +406,7 @@ class GoogleDriveHelper:
             else:
                 file = self.__copyFile(meta.get('id'), GDRIVEID, meta.get('name'))
                 if config_dict['EMOJI_THEME']:
-                    msg += f'<b>╭🗂️ Name: </b><code>{file.get("name")}</code>'
+                    msg += f'<b>┏ 🗂️ Name: </b><code>{file.get("name")}</code>'
                 else:
                     msg += f'<b>╭ Name: </b><code>{file.get("name")}</code>'
                 durl = self.__G_DRIVE_BASE_DOWNLOAD_URL.format(file.get("id"))
@@ -416,8 +416,8 @@ class GoogleDriveHelper:
                 if mime_type is None:
                     mime_type = 'File'
                 if config_dict['EMOJI_THEME']:
-                    msg += f'\n<b>├📦 Size: </b>{get_readable_file_size(int(meta.get("size", 0)))}'
-                    msg += f'\n<b>├♻ Type: </b>{mime_type}'
+                    msg += f'\n<b>┣📦 Size: </b>{get_readable_file_size(int(meta.get("size", 0)))}'
+                    msg += f'\n<b>┣♻ Type: </b>{mime_type}'
                 else:
                     msg += f'\n<b>├ Size: </b>{get_readable_file_size(int(meta.get("size", 0)))}'
                     msg += f'\n<b>├ Type: </b>{mime_type}'
@@ -758,10 +758,10 @@ class GoogleDriveHelper:
             if mime_type == self.__G_DRIVE_DIR_MIME_TYPE:
                 self.__gDrive_directory(meta)
                 if config_dict['EMOJI_THEME']:
-                    msg += f'<b>╭🗂️ Name: </b><code>{name}</code>'
-                    msg += f'\n<b>├📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
-                    msg += f'\n<b>├♻ Type: </b>Folder'
-                    msg += f'\n<b>├🗃️ SubFolders: </b>{self.__total_folders}'
+                    msg += f'<b>┏ 🗂️ Name: </b><code>{name}</code>'
+                    msg += f'\n<b>┣📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
+                    msg += f'\n<b>┣♻ Type: </b>Folder'
+                    msg += f'\n<b>┣🗃️ SubFolders: </b>{self.__total_folders}'
                 else:
                     msg += f'<b>╭ Name: </b><code>{name}</code>'
                     msg += f'\n<b>├ Size: </b>{get_readable_file_size(self.__total_bytes)}'
@@ -777,13 +777,13 @@ class GoogleDriveHelper:
                 self.__total_files += 1
                 self.__gDrive_file(meta)
                 if config_dict['EMOJI_THEME']:
-                    msg += f'\n<b>├📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
-                    msg += f'\n<b>├♻ Type: </b>{mime_type}'
+                    msg += f'\n<b>┣📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
+                    msg += f'\n<b>┣♻ Type: </b>{mime_type}'
                 else:
                     msg += f'\n<b>├ Size: </b>{get_readable_file_size(self.__total_bytes)}'
                     msg += f'\n<b>├ Type: </b>{mime_type}'
             if config_dict['EMOJI_THEME']:
-                msg += f'\n<b>├🗂️ Files: </b>{self.__total_files}'
+                msg += f'\n<b>┣🗂️ Files: </b>{self.__total_files}'
             else:
                 msg += f'\n<b>├ Files: </b>{self.__total_files}'
         except Exception as err:
