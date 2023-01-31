@@ -1,3 +1,3 @@
-FROM ghcr.io/anime-republic/wzml:latest
+FROM arkonn/mltb:heroku
 COPY . .
 CMD ["bash", "start.sh"]
